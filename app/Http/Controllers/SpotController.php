@@ -107,13 +107,14 @@ class SpotController extends Controller
                 "images.required" => "エラーが発生しました",
             ]
         );
+        $images = str_replace(["　", " "], "", $request->images);
         $spot->update([
             "name" => $request->name,
             "event_id" => $request->select,
             "description" => $request->images,
             "location_x" => $request->location_x,
             "location_y" => $request->location_y,
-            "images" => $request->images
+            "images" => $images
         ]);
         return redirect(route("spot_create"))->with(["message" => "スポット情報が更新されました"]);
     }

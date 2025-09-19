@@ -20,6 +20,6 @@ class Log extends Model
     }
     public function spot()
     {
-        return $this->belongsTo(Log::class, "spot_id");
+        return $this->belongsTo(Spot::class, "spot_id");
     }
 }

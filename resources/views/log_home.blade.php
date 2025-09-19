@@ -22,7 +22,7 @@
         <tr>
             <td>{{ $log->id }}</td>
             <td>{{ $log->event->name }}</td>
-            <td>{{ empty($log->spot->name) ? "":""  }}</td>
+            <td>{{ empty($log->spot->name) ? "": $log->spot->name  }}</td>
             <td>{{ $log->operation_type }}</td>
             <td>{{ $log->created_at }}</td>
             <td>
